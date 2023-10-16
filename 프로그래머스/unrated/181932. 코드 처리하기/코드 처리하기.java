@@ -17,6 +17,6 @@ class Solution {
             }
         }
 
-        return ret.toString().equals("") ? "EMPTY" : ret.toString();
+        return ret.toString().length() == 0 ? "EMPTY" : ret.toString();
     }
 }
