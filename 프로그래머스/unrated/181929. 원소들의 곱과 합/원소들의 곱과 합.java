@@ -1,12 +1,9 @@
+import java.util.Arrays;
+
 class Solution {
     public static int solution(int[] num_list) {
-        int multiplication = 1;
-        int addition = 0;
-
-        for (int number : num_list) {
-            multiplication *= number;
-            addition += number;
-        }
+        int multiplication = Arrays.stream(num_list).reduce(1, (x, y) -> x * y);
+        int addition = Arrays.stream(num_list).sum();
 
         return multiplication < Math.pow(addition, 2) ? 1 : 0;
     }
