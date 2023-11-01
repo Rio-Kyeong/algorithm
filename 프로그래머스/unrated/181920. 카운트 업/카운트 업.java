@@ -1,11 +1,7 @@
-import java.util.List;
-import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 class Solution {
-    public static List<Integer> solution(int start_num, int end_num) {
-        return IntStream.rangeClosed(start_num, end_num)
-                .boxed()
-                .collect(Collectors.toList());
+    public static int[] solution(int start_num, int end_num) {
+        return IntStream.rangeClosed(start_num, end_num).toArray();
     }
 }

@@ -1,10 +1,10 @@
 # [level unrated] 카운트 업 - 181920 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181920) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181920#) 
 
 ### 성능 요약
 
-메모리: 74.3 MB, 시간: 1.81 ms
+메모리: 75.2 MB, 시간: 1.49 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2023년 11월 3일 22:24:30
+2023년 11월 3일 22:25:49
 
 ### 문제 설명
 
