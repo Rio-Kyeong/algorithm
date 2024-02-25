@@ -24,9 +24,12 @@ public class Main {
                 swapBall(result, firstIndex - 1, secondIndex - 1);
             }
 
+            StringBuilder resultBuilder = new StringBuilder();
             for (int i : result) {
-                System.out.print(i + " ");
+                resultBuilder.append(i).append(" ");
             }
+
+            System.out.println(resultBuilder.toString().trim());
         } catch (IOException | NumberFormatException e) {
             System.out.println(e.getMessage());
         }
