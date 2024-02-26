@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -9,20 +8,20 @@ public class Main {
     public static void main(String[] args) {
         try (BufferedReader inputReader = new BufferedReader(new InputStreamReader(System.in))) {
             StringTokenizer tokenizer = new StringTokenizer(inputReader.readLine(), " ");
-            int baskets = Integer.parseInt(tokenizer.nextToken());
-            int changeNumber = Integer.parseInt(tokenizer.nextToken());
+            int basketCount = Integer.parseInt(tokenizer.nextToken());
+            int changeCount = Integer.parseInt(tokenizer.nextToken());
 
-            int[] result = new int[baskets];
+            int[] result = new int[basketCount];
             for (int i = 0; i < result.length; i++) {
                 result[i] = i + 1;
             }
 
-            for (int i = 0; i < changeNumber; i++) {
+            for (int i = 0; i < changeCount; i++) {
                 tokenizer = new StringTokenizer(inputReader.readLine(), " ");
-                int startIndex = Integer.parseInt(tokenizer.nextToken());
-                int endIndex = Integer.parseInt(tokenizer.nextToken());
+                int startIndex = Integer.parseInt(tokenizer.nextToken()) - 1;
+                int endIndex = Integer.parseInt(tokenizer.nextToken()) - 1;
 
-                reverseOrderBall(result, startIndex - 1, endIndex - 1);
+                reverseOrderBalls(result, startIndex, endIndex);
             }
 
             StringBuilder resultBuilder = new StringBuilder();
@@ -36,11 +35,13 @@ public class Main {
         }
     }
 
-    private static void reverseOrderBall(int[] array, int startIndex, int endIndex) {
-        int[] subArray = Arrays.copyOfRange(array, startIndex, endIndex + 1);
-
-        for (int i = startIndex, j = subArray.length - 1; i <= endIndex; i++, j--) {
-            array[i] = subArray[j];
+    private static void reverseOrderBalls(int[] array, int startIndex, int endIndex) {
+        while (startIndex < endIndex) {
+            int temp = array[startIndex];
+            array[startIndex] = array[endIndex];
+            array[endIndex] = temp;
+            startIndex++;
+            endIndex--;
         }
     }
 }
