@@ -1,23 +1,17 @@
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
-import java.util.List;
 
 class Solution {
     public long solution(long number) {
-        List<Character> integers = new ArrayList<>();
+        String[] strings = String.valueOf(number).split("");
 
-        while (number > 0) {
-            integers.add((char) ('0' + number % 10));
-            number /= 10;
+        Arrays.sort(strings, Comparator.reverseOrder());
+
+        StringBuilder resultBuilder = new StringBuilder();
+        for (String string : strings) {
+            resultBuilder.append(string);
         }
 
-        integers.sort(Comparator.reverseOrder());
-
-        StringBuilder sortedStr = new StringBuilder();
-        for (Character integer : integers) {
-            sortedStr.append(integer);
-        }
-
-        return Long.parseLong(sortedStr.toString());
+        return Long.parseLong(resultBuilder.toString());
     }
 }
