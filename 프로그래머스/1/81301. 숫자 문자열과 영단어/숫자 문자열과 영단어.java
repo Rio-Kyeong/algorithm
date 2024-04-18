@@ -8,24 +8,18 @@ class Solution {
 
         int index = 0;
         while (string.length() > index) {
-            char charAt = string.charAt(index);
-            if (Character.isDigit(charAt)) {
-                resultBuilder.append(charAt);
+            if (Character.isDigit(string.charAt(index))) {
+                resultBuilder.append(string.charAt(index));
                 index++;
             } else {
                 StringBuilder wordBuilder = new StringBuilder();
-                while (string.length() > index && !Character.isDigit(charAt)) {
-                    wordBuilder.append(charAt);
+                while (string.length() > index && !Character.isDigit(string.charAt(index))) {
+                    wordBuilder.append(string.charAt(index));
                     if (numberMap.containsKey(wordBuilder.toString())) {
                         resultBuilder.append(numberMap.get(wordBuilder.toString()));
                         wordBuilder.setLength(0);
                     }
                     index++;
-                    
-                    if (string.length() > index) {
-                        charAt = string.charAt(index);
-                    }
-                        
                 }
             }
         }
